@@ -13,7 +13,6 @@ ics_events/
 logs/
 
 #Secrets / config
-config.py
 .env
 
 #OS files
