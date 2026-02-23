@@ -42,6 +42,22 @@ The calendar file is regenerated every day and acts as the single source of trut
 
 ---
 
+## State Tracking with SQLite
+
+The project uses a lightweight local SQLite database to track assignment state between runs.
+
+SQLite is used to:
+- Store Canvas assignment IDs
+- Track previously seen assignments
+- Support safe, idempotent execution
+- Enable future features like detecting due date changes or removed assignments
+
+This allows the script to run repeatedly (via cron) without creating duplicate calendar events or relying on fragile file-based checks.
+
+The database is local-only and excluded from version control.
+
+--- 
+
 ## Tech Stack
 
 - **Python 3**
